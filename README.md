@@ -16,7 +16,7 @@ Pull requests let you tell others about changes you've pushed to a repository on
 A git checkout allows you to move between branches and potentially restore tree files. The command git checkout master switches you to the master branch, which is always the best place to start before making changes to your repo.
 For creation of a new branch and switching into that branch :-     
    
-                $ git checkout -b [branchname]
+        	$ git checkout -b [branchname]
 
 For switching from one particular branch to another branch :-    
         
@@ -43,29 +43,32 @@ Maybe you made some progress on a branch at work, but now you want to continue w
 # git diff
 
 To view all the merge conflicts :-     
+        
         	$ git diff
 
 To view those conflicts against the base file :-     
+        
         	$ git diff –base [filename]
 
 To preview the changes that are made before merging it to the master file :-     
+        
         	$ git diff [source branch] [target branch]
 
 To view the changes that have been made :-     
+        
         	$ git log
 
 And to view those changes in detail :-     
+        
         	$ git log –summary
 
 # git Unstage
 
 Maybe you accidentally staged some files that you don't want to commit, this command help to get back to the previous stage that is but unstaging the changes:- 
 
-	$ git reset HEAD [filename]
 
-	$ git reset HEAD
-	
+	$ git reset HEAD [filename]
+	$ git reset HEAD	
 	$ git config –global alias.unstaging ‘reset HEAD’
-	
 	$ git unstage
 
