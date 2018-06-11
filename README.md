@@ -1,5 +1,5 @@
 ﻿# Git-Documentation
-A getting started git documentation for beginners
+A getting stated git documentation for beginners
 
 ##Introduction
 
