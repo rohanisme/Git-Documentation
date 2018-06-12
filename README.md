@@ -237,5 +237,109 @@ Maybe you accidentally staged some files that you don't want to commit, this com
 	$ git reset HEAD	
 	$ git config –global alias.unstaging ‘reset HEAD’
 	$ git unstage
+	
+
+git add:
+
+The git add command adds a change in the working directory to the staging area. It tells Git that you want to include updates to a particular file in the next commit. 
+Stores the current contents of the index in a new commit along with a log message from the user describing the changes.
+In conjunction with these commands, you'll also need git status to view the state of the working directory and the staging area.
+
+Common Options
+
+git add <file>
+Stage all changes in <file> for the next commit.
+
+git add <directory>
+Stage all changes in <directory> for the next commit.
+
+git add -p
+Begin an interactive staging session that lets you choose portions of a file to add to the next commit.
+This will present you with a chunk of changes and prompt you for a command.
+
+
+Managing Remotes / Adding a remote
+
+Adding a remote
+To add a new remote, use the git remote add command on the terminal, in the directory your repository is stored at.
+
+The git remote add command takes two arguments:
+
+A remote name, for example, origin
+A remote URL, for example, https://github.com/user/repo.git
+For example:
+
+git remote add origin https://github.com/user/repo.git
+ # Set a new remote
+ git remote -v
+ # Verify new remote
+ origin  https://github.com/user/repo.git (fetch)
+ origin  https://github.com/user/repo.git (push)
+
+
+Troubleshooting
+
+You may encounter these errors when trying to add a remote.
+
+ 1.Remote name already exists
+   This error means you've tried to add a remote with a name that already exists in your local repository:
+
+   git remote add origin https://github.com/octocat/Spoon-Knife
+   fatal: remote origin already exists.
+   To fix this, you can
+
+   Use a different name for the new remote
+   Rename the existing remote
+   Delete the existing remote
+
+ 2.Adds content from all *.txt files under Documentation directory and its subdirectories:
+
+   $ git add Documentation/\*.txt
+     Note that the asterisk * is quoted from the shell.
+     In this example this lets the command include the files from subdirectories of Documentation/ directory.
+
+     Considers adding content from all git-*.sh scripts:
+
+     $ git add git-*.sh
+     Because this example lets the shell expand the asterisk,it does not consider subdir/git-foo.sh.
+     
+     
+
+git commit:
+
+The "commit" command is used to save your changes to the local repository.
+Using the "git commit" command only saves a new commit object in the local Git repository. 
+Exchanging commits has to be performed manually and explicitly (with the "git fetch", "git pull", and "git push" commands).
+Stores the current contents of the index in a new commit along with a log message from the user describing the changes.
+
+Common Options
+
+-m <message>
+Sets the commit's message. Make sure to provide a concise description that helps your teammates understand what happened.
+
+-a
+Includes all currently changed files in this commit.
+
+--amend
+Rewrites the very last commit with any currently staged changes and/or a new commit message. 
+Git will rewrite the last commit and effectively replace it with the amended one. 
+Note that such a rewriting of commits should only be performed on commits that have not been pushed to a remote repository, yet.
+
+
+Workflow
+
+For a basic workflow, you can use the "git add" command to stage changes for the next commit. 
+The actual commit command will then wrap up the mentioned changes in a new commit object:
+
+git add index.html css/styles.css
+git commit -m "Change titles and styling on homepage"
+If you have lots of changed files in your working copy - and want all of them included in the next commit - you can make use of the "-a" parameter and thereby omit the "git add" step:
+
+git commit -a -m "Change titles and styling on homepage"
+The "--amend" option comes in handy, for example, when you mistyped the last commit's message or forgot to add a change.
+The following example will correct the very last commit by overwriting its message and adding another change:
+
+git add forgotten-change.js
+git commit --amend -m "New commit message".     
 
 
