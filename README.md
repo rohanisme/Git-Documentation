@@ -1,4 +1,4 @@
-﻿# Git-Documentation
+# Git-Documentation
 A getting stated git documentation for beginners
 
 ##Introduction
@@ -82,6 +82,15 @@ repository, or
 >This creates a new subdirectory named .git that contains all your necessary repository files — a Git repository skeleton. 
 >At this point, nothing in your project is tracked yet. Running git init in an existing repository is safe. 
 >It will not overwrite things that are already there. The primary reason for rerunning git init is to pick up newly added templates.
+
+
+##### git origin
+>origin is the default alias to the URL of your remote repository.
+    When you clone a repository, for example from GitHub:
+		=>origin is the alias for the URL from which you cloned the repository. Note that you can change this alias.
+		=>There is one master branch in the remote repository (aliased by origin). There is also another master branch created locally.
+		
+		
 
 ##### git branch
 
@@ -176,6 +185,11 @@ git push is used to add commits you have done on the local repository to a remot
 git pull:
 
 Pull requests let you tell others about changes you've pushed to a repository on GitHub. Once a pull request is opened, you can discuss and review the potential changes with collaborators and add follow-up commits before the changes are merged into the repository.
+
+#####git stage
+A staging step in git allows you to continue making changes to the working directory, and when you decide you wanna interact with version control, it allows you to record changes in small commits.
+	So the staging area is like:
+		>a cache of files that you want to commit
 
 # git Checkout
 
@@ -341,5 +355,3 @@ The following example will correct the very last commit by overwriting its messa
 
 git add forgotten-change.js
 git commit --amend -m "New commit message".     
-
-
